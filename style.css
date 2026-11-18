@@ -213,6 +213,47 @@ h2::after {
   color: var(--teal);
 }
 
+/* Contact */
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-link {
+  display: block;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--navy);
+  border-left: 8px solid var(--teal);
+  border-radius: 8px;
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  background: var(--navy);
+  color: var(--light);
+  transform: translateY(-3px);
+}
+
+.contact-link:hover .contact-label {
+  color: var(--light);
+}
+
 /* Footer */
 .site-footer {
   padding: 2rem 1.5rem;
