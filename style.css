@@ -1,0 +1,284 @@
+/* Three-colour scheme: deep navy, teal accent, warm off-white */
+:root {
+  --navy: #14213d;
+  --teal: #0f8b8d;
+  --light: #f5f7fa;
+  --white: #ffffff;
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--navy);
+  background: var(--light);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+
+/* Header + nav */
+.site-header {
+  background: var(--navy);
+  color: var(--light);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  background: var(--navy);
+  border-bottom: 1px solid rgba(245, 247, 250, 0.15);
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-brand:hover {
+  color: var(--teal);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  color: var(--light);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: var(--teal);
+  color: var(--white);
+}
+
+/* Hero */
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  border-left: 8px solid var(--teal);
+  padding-left: 1rem;
+}
+
+.tagline {
+  margin: 1.25rem 0 0 calc(8px + 1rem);
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section > * {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-alt {
+  background: var(--white);
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  margin-top: 0.5rem;
+  background: var(--teal);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.section:hover h2::after {
+  width: 6rem;
+}
+
+#about p {
+  max-width: 65ch;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.skill {
+  padding: 0.65rem 1.1rem;
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: default;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.skill:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* Projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project {
+  padding: 1.75rem;
+  background: var(--white);
+  border: 2px solid var(--navy);
+  border-top: 8px solid var(--teal);
+  border-radius: 8px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.3rem;
+}
+
+.project p {
+  margin: 0;
+}
+
+.project:hover {
+  background: var(--navy);
+  color: var(--light);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 0 var(--teal);
+}
+
+.project:hover h3 {
+  color: var(--teal);
+}
+
+/* Footer */
+.site-footer {
+  padding: 2rem 1.5rem;
+  background: var(--navy);
+  color: var(--light);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Responsive: phones (~375px) */
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .nav {
+    padding: 0.7rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-links a {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    padding: 3.5rem 1rem 3rem;
+  }
+
+  .section {
+    padding: 2.75rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    padding: 1.25rem;
+  }
+
+  .skills {
+    flex-direction: column;
+  }
+
+  .skill {
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
